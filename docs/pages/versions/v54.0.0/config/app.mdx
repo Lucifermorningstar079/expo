@@ -1,24 +1,43 @@
----
-title: app.json / app.config.js
-description: A reference of available properties in Expo app config.
-maxHeadingDepth: 5
----
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-import { CodeSquare01Icon } from '@expo/styleguide-icons/outline/CodeSquare01Icon';
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo}>JODIVA</Text>
 
-import schema from '~/public/static/schemas/v54.0.0/app-config-schema.json';
-import AppConfigSchemaTable from '~/ui/components/AppConfigSchemaTable';
-import { BoxLink } from '~/ui/components/BoxLink';
+      <Text style={styles.tagline}>
+        Sab Kuch, Aapke Aas-Paas.
+      </Text>
 
-The following is a list of properties that are available for you under the `"expo"` key in **app.json** or **app.config.json**. These properties can be passed to the top level object of **app.config.js** or **app.config.ts**.
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Get Started</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
-<BoxLink
-  title="Configuration with app config"
-  description="For information on app configuration, the differences between various app config files, and how to use them dynamically."
-  href="/workflow/configuration/"
-  Icon={CodeSquare01Icon}
-/>
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+    padding: 20,
+  },
 
-## Properties
+  logo: {
+    fontSize: 42,
+    fontWeight: 'bold',
+    color: '#2563eb',
+  },
 
-<AppConfigSchemaTable schema={schema} />
+  tagline: {
+    fontSize: 16,
+    marginTop: 10,
+    color: '#555',
+    textAlign: 'center',
+  },
+
+  button: {
+    marginTop: 35
